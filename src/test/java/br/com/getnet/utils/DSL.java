@@ -24,6 +24,11 @@ public class DSL {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(id)));
 	}
 	
+	public void waitPresenceByXpath(String xpath) {
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+	}
+
+	
 	// Click By
 	
 	public void clickById(String id) {
@@ -45,8 +50,10 @@ public class DSL {
 	// Get Text By
 	
 	public String getTextByXpath(String xpath) {
-	  return driver.findElement(By.xpath(xpath)).getText();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+	return	driver.findElement(By.xpath(xpath)).getText();
 		
 	}
+	
 
 }

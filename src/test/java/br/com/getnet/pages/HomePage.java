@@ -1,6 +1,6 @@
 package br.com.getnet.pages;
 
-
+   
 import org.openqa.selenium.WebDriver;
 
 import br.com.getnet.utils.DSL;

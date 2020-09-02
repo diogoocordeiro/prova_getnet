@@ -13,12 +13,21 @@ public class SearchPage {
 	}
 		
 		public void clicarOpComoAcessoMinhaContaSuperGet() {
-			dsl.clickByXpath("//a[@class = \"c-search-page__link\" and @href=\"https://site.getnet.com.br/bem-vindo/compra-mobile-jornada/extra-cartao-superget/ \"]");
+			dsl.clickByXpath("//*[@class = 'c-search-page__link' and @href='https://site.getnet.com.br/duvida/como-acesso-a-minha-conta-superget-2/ ']");
+		}
+		
+		public void aguardarModalComoAcessoMinhaContaSuperGet() {
+			dsl.waitPresenceByXpath("//*[@data-modal='11765']");
+		}
+		
+		public void validarTelaResultadoDaBusca() {
+			dsl.waitPresenceByXpath("//*[text()='Resultados da busca para: ']");
+			dsl.getTextByXpath("//*[text()='Resultados da busca para: ']");
 		}
 		
 		
 		public String validarMensagemComoAcessoMinhaContaSuperGet() {
-			return dsl.getTextByXpath("(//div[text()='Como acesso a minha conta SuperGet?'])[2]");
+			return dsl.getTextByXpath("(//*[text()='Como acesso a minha conta SuperGet?'])[2]");
 		}
 		
 
